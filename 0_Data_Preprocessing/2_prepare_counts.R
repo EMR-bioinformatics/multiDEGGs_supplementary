@@ -25,4 +25,4 @@ dds <- DESeqDataSetFromTximport(txi, sampleTable, ~1)
 vst <- vst(dds, blind=TRUE)
 vst <- assay(vst)
 
-save(list = c("vst", "txi", ), file = "./RNAseq/files/strap_ready.RData")
+save(list = c("vst", "txi", ), file = "./RNAseq/files/RNAseq_ready.RData")
