@@ -135,7 +135,7 @@ saveRDS(st, paste0("res2/st.",
                    paste(dataset, drug, outcome.var, n_filter, method, sig,
                          "RDS", sep = ".")))
 
-# Plot 1 --------------------------------------------------------------------
+# Plot --------------------------------------------------------------------
 ## comparing multiDEGGs_filter with other statistical filters
 library(ggplot2)
 library(RColorBrewer)

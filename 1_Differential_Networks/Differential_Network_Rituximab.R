@@ -2,13 +2,13 @@ rm(list = ls())
 library(dplyr)
 library(multiDEGGs)
 
-metadata <- readRDS("../Data/STRAP/STRAP.metadata_shiny041023.RDS")
+metadata <- readRDS("../Data/STRAP/STRAP.metadata.RDS")
 syn.RNAseq <- readRDS("../Data/STRAP/STRAP.vst.RDS")
 Olink <- readRDS("../Data/STRAP/STRAP.olink.RDS")
 proteomics <- readRDS("../Data/STRAP/STRAP.mass.spec.proteomics.RDS")
 phosphoproteomics <- readRDS("../Data/STRAP/STRAP.mass.spec.phosphoproteomics.RDS")
 
-# Phospho only (for each gene I'll take the average of its phosphorilation sites)
+# Phospho only (for each gene I'll take the average of its phosphorylation sites)
 gene_symbols <- gsub("\\([^)]*\\)", "", rownames(phosphoproteomics))
 phosphoproteomics <- aggregate(phosphoproteomics, by=list(GeneSymbol=gene_symbols),
                                FUN=function(x) mean(x, na.rm=TRUE))
